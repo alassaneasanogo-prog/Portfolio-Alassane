@@ -2,296 +2,147 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Alassane Sanogo | Ingénieur de Recherche en IA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ingénieur de Recherche en Intelligence Artificielle - Mathématiques, Python, Modèles IA et vulgarisation scientifique.">
+  <title>Alassane Sanogo - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root {
-      --primary: #6366f1;
-      --dark: #0f172a;
-      --light: #f8fafc;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: var(--light);
-      color: #1e2937;
-      line-height: 1.6;
-    }
-
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-    }
-    .logo {
-      font-size: 1.4em;
-      font-weight: 700;
-      color: var(--primary);
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      margin-left: 30px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover { color: var(--primary); }
-
-    /* Hero */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(135deg, #1e2937 0%, #312e81 100%);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero-content h1 {
-      font-size: 3.2em;
-      margin-bottom: 15px;
-    }
-    .hero-content .subtitle {
-      font-size: 1.4em;
-      opacity: 0.95;
-      margin-bottom: 30px;
-    }
-    .hero-content .tag {
-      display: inline-block;
-      background: rgba(255,255,255,0.15);
-      padding: 8px 20px;
-      border-radius: 50px;
-      font-size: 1.1em;
-      margin-bottom: 40px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      margin: 10px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-    }
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-    .btn-primary:hover { background: #4f46e5; transform: translateY(-3px); }
-
-    /* Sections */
-    section {
-      padding: 100px 5%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    h2 {
-      font-size: 2.5em;
-      margin-bottom: 50px;
-      text-align: center;
-      color: var(--dark);
-    }
-
-    /* Projets */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 30px;
-    }
-    .project-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: all 0.4s;
-    }
-    .project-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
-    }
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .project-content {
-      padding: 25px;
-    }
-    .project-content h3 {
-      margin-bottom: 12px;
-      color: #1e2937;
-    }
-    .project-content p {
-      color: #64748b;
-      margin-bottom: 20px;
-    }
-    .btn-group {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .btn-secondary {
-      background: #64748b;
-      color: white;
-    }
-    .btn-secondary:hover { background: #475569; }
-
-    /* Compétences */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-    .skill-tag {
-      background: white;
-      padding: 12px 24px;
-      border-radius: 50px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-      font-weight: 500;
-    }
-
-    footer {
-      background: var(--dark);
-      color: #94a3b8;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    @media (max-width: 768px) {
-      .hero-content h1 { font-size: 2.6em; }
-      .nav-links a { margin-left: 15px; font-size: 0.95em; }
-    }
+    .hidden { display: none; }
   </style>
 </head>
-<body>
+<body class="bg-gray-100 font-sans">
 
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">Alassane Sanogo</div>
-    <div class="nav-links">
-      <a href="#about">À propos</a>
-      <a href="#competences">Compétences</a>
-      <a href="#projets">Projets</a>
-      <a href="#contact">Contact</a>
-      <a href="https://github.com/jumeau97" target="_blank">GitHub</a> <!-- Remplace par ton vrai username si différent -->
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="tag">Ingénieur de Recherche en Intelligence Artificielle</div>
-      <h1>Alassane Sanogo</h1>
-      <p class="subtitle">Je transforme les mathématiques et les données en solutions intelligentes.<br>
-      Passionné par la recherche en IA, le Machine Learning et la vulgarisation scientifique.</p>
-      <a href="#projets" class="btn btn-primary">Découvrir mes projets</a>
-      <a href="https://github.com/jumeau97" target="_blank" class="btn" style="background:transparent; border:2px solid white; color:white;">Voir mon GitHub</a>
-    </div>
-  </section>
+  <!-- Header -->
+  <header class="bg-blue-600 text-white text-center py-10">
+    <h1 class="text-5xl font-bold">Alassane Sanogo</h1>
+    <p class="mt-2 text-xl">Ingénieur IA | Co-fondateur Sinitechs</p>
+  </header>
 
   <!-- À propos -->
-  <section id="about">
-    <h2>À propos de moi</h2>
-    <p style="max-width: 700px; margin: 0 auto; text-align: center; font-size: 1.15em; color: #475569;">
-      Ingénieur de recherche spécialisé en Intelligence Artificielle, je combine une solide expertise en mathématiques, 
-      programmation Python et développement de modèles d'IA. 
-      Je crée également du contenu éducatif pour rendre les concepts complexes accessibles à tous.
+  <section id="about" class="p-10 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">À propos de moi</h2>
+    <p class="text-gray-700 mb-4">
+      Je suis ingénieur de recherche en intelligence artificielle et co-fondateur de <strong>Sinitechs</strong>.
+      Passionné par les projets innovants et l'impact de l'IA dans la société.
+    </p>
+    <p class="text-gray-700">
+      Toujours à la recherche de collaborations stimulantes et de défis technologiques.
     </p>
   </section>
 
-  <!-- Compétences -->
-  <section id="competences" style="background: #f1f5f9;">
-    <h2>Compétences Techniques</h2>
-    <div class="skills">
-      <div class="skill-tag">Python</div>
-      <div class="skill-tag">Machine Learning</div>
-      <div class="skill-tag">Deep Learning</div>
-      <div class="skill-tag">TensorFlow / PyTorch</div>
-      <div class="skill-tag">NLP & Computer Vision</div>
-      <div class="skill-tag">Mathématiques Appliquées</div>
-      <div class="skill-tag">Synthèse Vocale (TTS)</div>
-      <div class="skill-tag">Vulgarisation Scientifique</div>
-      <div class="skill-tag">Git & GitHub</div>
-      <div class="skill-tag">Recherche en IA</div>
-    </div>
+  <!-- Parcours / Diplômes -->
+  <section id="education" class="bg-white p-10 max-w-5xl mx-auto my-10 rounded-xl shadow-lg">
+    <h2 class="text-3xl font-bold mb-6">Parcours & Diplômes</h2>
+    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+      <li>Master en Intelligence Artificielle – Université XYZ</li>
+      <li>Licence en Informatique – Université ABC</li>
+      <li>Certifications : Machine Learning, Deep Learning, NLP</li>
+    </ul>
+    <a href="CV_Alassane_Sanogo.pdf" download class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Télécharger mon CV</a>
   </section>
 
   <!-- Projets -->
-  <section id="projets">
-    <h2>Mes Projets en IA & Maths</h2>
-    <div class="projects-grid">
+  <section id="projects" class="p-10 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">Mes Projets</h2>
 
-      <!-- Exemple de projet 1 -->
-      <div class="project-card">
-        <!-- Remplace l'image par une vraie (GitHub raw, ImgBB, etc.) -->
-        <img src="https://via.placeholder.com/600x200/6366f1/ffffff?text=Projet+IA" alt="Projet IA">
+    <!-- Barre de recherche et filtre -->
+    <div class="flex flex-col md:flex-row md:justify-between mb-6 gap-4">
+      <input type="text" id="searchInput" placeholder="Rechercher un projet..." class="border p-2 rounded flex-1">
+      <select id="categoryFilter" class="border p-2 rounded">
+        <option value="all">Toutes les catégories</option>
+        <option value="web">Web</option>
+        <option value="ml">Machine Learning</option>
+        <option value="ai">IA</option>
+      </select>
+    </div>
+
+    <!-- Grille des projets -->
+    <div id="projectsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Projet 1 -->
+      <div class="project-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition" data-category="web">
+        <img src="https://via.placeholder.com/400x200" alt="Projet 1" class="rounded mb-4">
         <div class="project-content">
-          <h3>Modèle de Détection d'Objets avec YOLO</h3>
-          <p>Implémentation et fine-tuning d'un modèle de Computer Vision pour la détection en temps réel. Utilisé dans un projet de recherche.</p>
-          <div class="btn-group">
-            <a href="#" class="btn btn-primary">Voir le projet</a>
-            <a href="https://github.com/jumeau97" target="_blank" class="btn btn-secondary">Code source</a>
+          <h3 class="text-2xl font-semibold mb-2">Portfolio Web</h3>
+          <p class="text-gray-700 mb-4">Site web interactif en HTML, CSS et JS pour présenter mes projets et mon profil.</p>
+          <div class="btn-group flex gap-2">
+            <a href="https://demo-projet1.com" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Voir le projet</a>
+            <a href="https://github.com/alassaneasanogo-prog/Portfolio-Alassane" target="_blank" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Code source</a>
           </div>
         </div>
       </div>
 
-      <!-- Exemple de projet 2 -->
-      <div class="project-card">
-        <img src="https://via.placeholder.com/600x200/4f46e5/ffffff?text=Lecteur+Audio" alt="Lecteur Audio">
+      <!-- Projet 2 -->
+      <div class="project-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition" data-category="ml">
+        <img src="https://via.placeholder.com/400x200" alt="Projet 2" class="rounded mb-4">
         <div class="project-content">
-          <h3>Lecteur Audio Éducatif pour Mathématiques</h3>
-          <p>Application Python qui convertit des textes mathématiques en audio naturel grâce à la synthèse vocale.</p>
-          <div class="btn-group">
-            <a href="#" class="btn btn-primary">Voir le projet</a>
-            <a href="https://github.com/jumeau97" target="_blank" class="btn btn-secondary">Code source</a>
+          <h3 class="text-2xl font-semibold mb-2">Prédictions ML</h3>
+          <p class="text-gray-700 mb-4">Modèle de Machine Learning pour prédire des tendances financières avec Python et scikit-learn.</p>
+          <div class="btn-group flex gap-2">
+            <a href="https://demo-projet2.com" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Voir le projet</a>
+            <a href="https://github.com/alassaneasanogo-prog/Projet-ML" target="_blank" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Code source</a>
           </div>
         </div>
       </div>
 
-      <!-- Ajoute ici tes vrais projets en copiant le bloc ci-dessus -->
-      <!-- Exemple supplémentaire :
-      <div class="project-card">
-        <img src="..." alt="...">
+      <!-- Projet 3 -->
+      <div class="project-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition" data-category="ai">
+        <img src="https://via.placeholder.com/400x200" alt="Projet 3" class="rounded mb-4">
         <div class="project-content">
-          <h3>Nom du Projet</h3>
-          <p>Description brève (technologies utilisées, impact, etc.).</p>
-          <div class="btn-group">
-            <a href="LIEN_DEMO" class="btn btn-primary">Voir le projet</a>
-            <a href="LIEN_GITHUB" target="_blank" class="btn btn-secondary">Code source</a>
+          <h3 class="text-2xl font-semibold mb-2">Reconnaissance IA</h3>
+          <p class="text-gray-700 mb-4">Application IA pour la reconnaissance d’images et le traitement automatique avec TensorFlow.</p>
+          <div class="btn-group flex gap-2">
+            <a href="https://demo-projet3.com" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Voir le projet</a>
+            <a href="https://github.com/alassaneasanogo-prog/Projet-IA" target="_blank" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Code source</a>
           </div>
         </div>
       </div>
-      -->
+
+      <!-- Ajoute ici tes autres projets en copiant un bloc ci-dessus -->
 
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" style="background: #0f172a; color: white; text-align: center;">
-    <h2 style="color:white;">Discutons de vos projets en IA</h2>
-    <p style="max-width: 600px; margin: 20px auto; font-size: 1.1em;">
-      Ouvert aux collaborations, stages, ou simplement pour échanger sur l'Intelligence Artificielle.
-    </p>
+  <section id="contact" class="bg-gray-900 text-white text-center py-10">
+    <h2 class="text-3xl font-bold mb-4">Discutons de vos projets en IA</h2>
+    <p class="max-w-lg mx-auto mb-4 text-gray-300">Ouvert aux collaborations, stages, ou simplement pour échanger sur l'Intelligence Artificielle.</p>
     <p><strong>Email :</strong> tonemail@gmail.com</p>
-    <p><strong>GitHub :</strong> <a href="https://github.com/jumeau97" target="_blank" style="color:#a5b4fc;">jumeau97</a></p>
+    <p><strong>GitHub :</strong> <a href="https://github.com/jumeau97" target="_blank" class="text-blue-400">jumeau97</a></p>
   </section>
 
-  <footer>
-    &copy; 2026 Alassane Sanogo — Ingénieur de Recherche en Intelligence Artificielle
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 text-center py-4">
+    © 2026 Alassane Sanogo — Ingénieur de Recherche en IA
   </footer>
 
+  <!-- Script recherche et filtre -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const projectsContainer = document.getElementById('projectsContainer');
+    const projectCards = projectsContainer.querySelectorAll('.project-card');
+
+    function filterProjects() {
+      const searchText = searchInput.value.toLowerCase();
+      const category = categoryFilter.value;
+
+      projectCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const cardCategory = card.dataset.category;
+
+        if ((title.includes(searchText) || description.includes(searchText)) &&
+            (category === 'all' || cardCategory === category)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    searchInput.addEventListener('input', filterProjects);
+    categoryFilter.addEventListener('change', filterProjects);
+  </script>
+
 </body>
-      </html>
+</html>
