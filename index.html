@@ -2,111 +2,296 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio - Alassane Sanogo</title>
+  <title>Alassane Sanogo | Ingénieur de Recherche en IA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ingénieur de Recherche en Intelligence Artificielle - Mathématiques, Python, Modèles IA et vulgarisation scientifique.">
   <style>
+    :root {
+      --primary: #6366f1;
+      --dark: #0f172a;
+      --light: #f8fafc;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f9;
-      color: #333;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--light);
+      color: #1e2937;
+      line-height: 1.6;
     }
-    header {
-      background: #4f46e5;
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       color: white;
-      padding: 50px 20px;
+    }
+    .logo {
+      font-size: 1.4em;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, #1e2937 0%, #312e81 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 0 20px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+    .hero-content h1 {
+      font-size: 3.2em;
+      margin-bottom: 15px;
     }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
+    .hero-content .subtitle {
+      font-size: 1.4em;
+      opacity: 0.95;
+      margin-bottom: 30px;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      color: #4f46e5;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #4f46e5;
+    .hero-content .tag {
       display: inline-block;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    .contact p {
-      margin: 5px 0;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: white;
+      background: rgba(255,255,255,0.15);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 1.1em;
+      margin-bottom: 40px;
     }
     .btn {
       display: inline-block;
-      padding: 10px 20px;
-      margin: 10px 5px 0 0;
-      background: #4f46e5;
-      color: white;
+      padding: 14px 32px;
+      margin: 10px;
+      border-radius: 50px;
       text-decoration: none;
-      border-radius: 5px;
+      font-weight: 600;
+      transition: all 0.3s;
     }
-    .btn:hover {
-      background: #3730a3;
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover { background: #4f46e5; transform: translateY(-3px); }
+
+    /* Sections */
+    section {
+      padding: 100px 5%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 50px;
+      text-align: center;
+      color: var(--dark);
+    }
+
+    /* Projets */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s;
+    }
+    .project-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 25px;
+    }
+    .project-content h3 {
+      margin-bottom: 12px;
+      color: #1e2937;
+    }
+    .project-content p {
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-secondary {
+      background: #64748b;
+      color: white;
+    }
+    .btn-secondary:hover { background: #475569; }
+
+    /* Compétences */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .skill-tag {
+      background: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      font-weight: 500;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #94a3b8;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.6em; }
+      .nav-links a { margin-left: 15px; font-size: 0.95em; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>👋 Bonjour, je suis Alassane Sanogo</h1>
-  <p>Passionné de mathématiques et de programmation, créateur de contenu éducatif</p>
-</header>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Alassane Sanogo</div>
+    <div class="nav-links">
+      <a href="#about">À propos</a>
+      <a href="#competences">Compétences</a>
+      <a href="#projets">Projets</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/jumeau97" target="_blank">GitHub</a> <!-- Remplace par ton vrai username si différent -->
+    </div>
+  </nav>
 
-<section>
-  <h2>🎯 Compétences</h2>
-  <ul>
-    <li>Python & programmation simple</li>
-    <li>Mathématiques et vulgarisation</li>
-    <li>Création de contenu vidéo YouTube</li>
-    <li>Lecture audio avec Python</li>
-    <li>Organisation et pédagogie</li>
-  </ul>
-</section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="tag">Ingénieur de Recherche en Intelligence Artificielle</div>
+      <h1>Alassane Sanogo</h1>
+      <p class="subtitle">Je transforme les mathématiques et les données en solutions intelligentes.<br>
+      Passionné par la recherche en IA, le Machine Learning et la vulgarisation scientifique.</p>
+      <a href="#projets" class="btn btn-primary">Découvrir mes projets</a>
+      <a href="https://github.com/jumeau97" target="_blank" class="btn" style="background:transparent; border:2px solid white; color:white;">Voir mon GitHub</a>
+    </div>
+  </section>
 
-<section>
-  <h2>🚀 Projets</h2>
-  <ul>
-    <li>Chaîne YouTube Maths : <a class="btn" href="https://www.youtube.com" target="_blank">Voir</a></li>
-    <li>Projet Python lecture audio : <a class="btn" href="#" target="_blank">Voir</a></li>
-    <li>Mini applications éducatives</li>
-  </ul>
-</section>
+  <!-- À propos -->
+  <section id="about">
+    <h2>À propos de moi</h2>
+    <p style="max-width: 700px; margin: 0 auto; text-align: center; font-size: 1.15em; color: #475569;">
+      Ingénieur de recherche spécialisé en Intelligence Artificielle, je combine une solide expertise en mathématiques, 
+      programmation Python et développement de modèles d'IA. 
+      Je crée également du contenu éducatif pour rendre les concepts complexes accessibles à tous.
+    </p>
+  </section>
 
-<section>
-  <h2>📩 Contact</h2>
-  <div class="contact">
-    <p>Email : tonemail@gmail.com</p>
-    <p>Téléphone : +212 6X XX XX XX</p>
-    <p>GitHub : <a class="btn" href="https://github.com/alassaneasanogo-prog" target="_blank">Voir GitHub</a></p>
-  </div>
-</section>
+  <!-- Compétences -->
+  <section id="competences" style="background: #f1f5f9;">
+    <h2>Compétences Techniques</h2>
+    <div class="skills">
+      <div class="skill-tag">Python</div>
+      <div class="skill-tag">Machine Learning</div>
+      <div class="skill-tag">Deep Learning</div>
+      <div class="skill-tag">TensorFlow / PyTorch</div>
+      <div class="skill-tag">NLP & Computer Vision</div>
+      <div class="skill-tag">Mathématiques Appliquées</div>
+      <div class="skill-tag">Synthèse Vocale (TTS)</div>
+      <div class="skill-tag">Vulgarisation Scientifique</div>
+      <div class="skill-tag">Git & GitHub</div>
+      <div class="skill-tag">Recherche en IA</div>
+    </div>
+  </section>
 
-<footer>
-  &copy; 2026 Alassane Sanogo - Tous droits réservés
-</footer>
+  <!-- Projets -->
+  <section id="projets">
+    <h2>Mes Projets en IA & Maths</h2>
+    <div class="projects-grid">
+
+      <!-- Exemple de projet 1 -->
+      <div class="project-card">
+        <!-- Remplace l'image par une vraie (GitHub raw, ImgBB, etc.) -->
+        <img src="https://via.placeholder.com/600x200/6366f1/ffffff?text=Projet+IA" alt="Projet IA">
+        <div class="project-content">
+          <h3>Modèle de Détection d'Objets avec YOLO</h3>
+          <p>Implémentation et fine-tuning d'un modèle de Computer Vision pour la détection en temps réel. Utilisé dans un projet de recherche.</p>
+          <div class="btn-group">
+            <a href="#" class="btn btn-primary">Voir le projet</a>
+            <a href="https://github.com/jumeau97" target="_blank" class="btn btn-secondary">Code source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exemple de projet 2 -->
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x200/4f46e5/ffffff?text=Lecteur+Audio" alt="Lecteur Audio">
+        <div class="project-content">
+          <h3>Lecteur Audio Éducatif pour Mathématiques</h3>
+          <p>Application Python qui convertit des textes mathématiques en audio naturel grâce à la synthèse vocale.</p>
+          <div class="btn-group">
+            <a href="#" class="btn btn-primary">Voir le projet</a>
+            <a href="https://github.com/jumeau97" target="_blank" class="btn btn-secondary">Code source</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ajoute ici tes vrais projets en copiant le bloc ci-dessus -->
+      <!-- Exemple supplémentaire :
+      <div class="project-card">
+        <img src="..." alt="...">
+        <div class="project-content">
+          <h3>Nom du Projet</h3>
+          <p>Description brève (technologies utilisées, impact, etc.).</p>
+          <div class="btn-group">
+            <a href="LIEN_DEMO" class="btn btn-primary">Voir le projet</a>
+            <a href="LIEN_GITHUB" target="_blank" class="btn btn-secondary">Code source</a>
+          </div>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background: #0f172a; color: white; text-align: center;">
+    <h2 style="color:white;">Discutons de vos projets en IA</h2>
+    <p style="max-width: 600px; margin: 20px auto; font-size: 1.1em;">
+      Ouvert aux collaborations, stages, ou simplement pour échanger sur l'Intelligence Artificielle.
+    </p>
+    <p><strong>Email :</strong> tonemail@gmail.com</p>
+    <p><strong>GitHub :</strong> <a href="https://github.com/jumeau97" target="_blank" style="color:#a5b4fc;">jumeau97</a></p>
+  </section>
+
+  <footer>
+    &copy; 2026 Alassane Sanogo — Ingénieur de Recherche en Intelligence Artificielle
+  </footer>
 
 </body>
-</html>
+      </html>
