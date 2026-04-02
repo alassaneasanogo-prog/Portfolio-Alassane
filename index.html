@@ -224,51 +224,138 @@
       class="border p-2 rounded flex-1">
     <select id="categoryFilter" class="border p-2 rounded">
       <option value="all">Toutes</option>
-      <option value="web">Web</option>
-      <option value="ml">ML</option>
-      <option value="ai">IA</option>
-    </select>
-  </div>
+<!DOCTYPE html>
+<html lang="fr" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alassane Sanogo - Portfolio</title>
 
-  <!-- Cards -->
-  <div id="projectsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <div class="project-card bg-white p-6 rounded-xl shadow-lg" data-category="web">
-      <h3 class="text-xl font-bold mb-2">Portfolio</h3>
-      <p class="mb-4">Site professionnel personnel</p>
-      <div class="flex gap-2">
-        <a href="#" class="px-3 py-2 text-white rounded" style="background: var(--secondary);">Voir</a>
-        <a href="#" class="px-3 py-2 bg-gray-600 text-white rounded">Code</a>
-      </div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #0B3C5D;
+      --secondary: #F97316;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+<!-- NAVBAR -->
+<header class="fixed w-full z-50 shadow-md" style="background: var(--primary); color: white;">
+  <div class="flex justify-between items-center px-4 py-3">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <img src="logo.png" class="h-8">
+      <span class="text-lg font-bold">Math Prog</span>
     </div>
 
-    <div class="project-card bg-white p-6 rounded-xl shadow-lg" data-category="ml">
-      <h3 class="text-xl font-bold mb-2">ML Project</h3>
-      <p class="mb-4">Machine Learning model</p>
-      <div class="flex gap-2">
-        <a href="#" class="px-3 py-2 text-white rounded" style="background: var(--secondary);">Voir</a>
-        <a href="#" class="px-3 py-2 bg-gray-600 text-white rounded">Code</a>
-      </div>
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex space-x-6 font-semibold">
+      <a href="#about" class="hover:text-orange-400">À propos</a>
+      <a href="#education" class="hover:text-orange-400">Parcours</a>
+      <a href="#projects" class="hover:text-orange-400">Projets</a>
+      <a href="#contact" class="hover:text-orange-400">Contact</a>
+    </nav>
+
+    <!-- Mobile Button -->
+    <button id="menu-btn" class="md:hidden text-2xl">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="hidden flex flex-col text-center" style="background: var(--primary);">
+
+    <a href="#about" class="py-3 border-t border-gray-600">À propos</a>
+    <a href="#education" class="py-3 border-t border-gray-600">Parcours</a>
+    <a href="#projects" class="py-3 border-t border-gray-600">Projets</a>
+    <a href="#contact" class="py-3 border-t border-gray-600">Contact</a>
+
+  </div>
+</header>
+
+<div class="h-20"></div>
+
+<!-- HERO -->
+<section class="text-center py-12 text-white" style="background: var(--primary);">
+  <h2 class="text-2xl md:text-4xl font-bold">Alassane Sanogo</h2>
+  <p class="text-sm md:text-lg">Ingénieur IA | Co-fondateur Sinitechs</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="p-6 text-center">
+  <h2 class="text-2xl font-bold mb-3">À propos</h2>
+  <p class="text-gray-700 text-sm">
+    Ingénieur IA et co-fondateur de Sinitechs.
+  </p>
+
+  <!-- Social -->
+  <div class="flex justify-center gap-5 mt-4 text-xl">
+    <i class="fab fa-facebook text-blue-600"></i>
+    <i class="fab fa-youtube text-red-600"></i>
+    <i class="fab fa-linkedin text-blue-800"></i>
+    <i class="fas fa-globe text-orange-500"></i>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="p-6 bg-white m-4 rounded-xl shadow">
+  <h2 class="text-xl font-bold mb-3">Parcours</h2>
+  <ul class="text-sm text-gray-700">
+    <li>Master IA</li>
+    <li>Licence Informatique</li>
+  </ul>
+
+  <a href="cv.pdf" class="mt-3 inline-block px-4 py-2 text-white rounded"
+     style="background: var(--secondary);">
+    Télécharger CV
+  </a>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="p-6">
+  <h2 class="text-xl font-bold mb-4">Projets</h2>
+
+  <input id="searchInput" placeholder="Rechercher..."
+    class="w-full border p-2 rounded mb-3">
+
+  <select id="categoryFilter" class="w-full border p-2 rounded mb-4">
+    <option value="all">Toutes</option>
+    <option value="web">Web</option>
+    <option value="ml">ML</option>
+  </select>
+
+  <div id="projectsContainer" class="grid gap-4">
+
+    <div class="project-card bg-white p-4 rounded shadow" data-category="web">
+      <h3 class="font-bold">Portfolio</h3>
+      <p class="text-sm">Site personnel</p>
+    </div>
+
+    <div class="project-card bg-white p-4 rounded shadow" data-category="ml">
+      <h3 class="font-bold">ML App</h3>
+      <p class="text-sm">Projet Machine Learning</p>
     </div>
 
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="text-center py-10 text-white" style="background:#0f172a;">
-  <h2 class="text-3xl font-bold mb-4">Contact</h2>
-  <p>Email : tonemail@gmail.com</p>
-  <p>GitHub : <a href="#" class="text-blue-400">tonprofil</a></p>
+<section id="contact" class="text-center py-8 text-white" style="background:#0f172a;">
+  <h2 class="text-xl font-bold">Contact</h2>
+  <p class="text-sm">tonemail@gmail.com</p>
 </section>
-
-<!-- FOOTER -->
-<footer class="text-center py-4 bg-gray-800 text-gray-400">
-  © 2026 Alassane Sanogo
-</footer>
 
 <!-- SCRIPT -->
 <script>
-// Mobile menu
+// MENU MOBILE
 const btn = document.getElementById("menu-btn");
 const menu = document.getElementById("mobile-menu");
 
@@ -276,7 +363,7 @@ btn.addEventListener("click", () => {
   menu.classList.toggle("hidden");
 });
 
-// Filter projects
+// FILTRE
 const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
 const cards = document.querySelectorAll('.project-card');
@@ -289,38 +376,16 @@ function filter() {
     let t = c.innerText.toLowerCase();
     let ccat = c.dataset.category;
 
-    if ((t.includes(text)) && (cat === 'all' || cat === ccat)) {
-      c.classList.remove('hidden');
+    if (t.includes(text) && (cat === 'all' || cat === ccat)) {
+      c.style.display = "block";
     } else {
-      c.classList.add('hidden');
+      c.style.display = "none";
     }
   });
 }
 
 searchInput.addEventListener('input', filter);
 categoryFilter.addEventListener('change', filter);
-
-// Active link on scroll
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove("text-orange-400");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("text-orange-400");
-    }
-  });
-});
 </script>
 
 </body>
