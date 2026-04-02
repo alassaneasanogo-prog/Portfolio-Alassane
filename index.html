@@ -4,37 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alassane Sanogo - Portfolio</title>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
+    :root {
+      --primary: #0B3C5D;
+      --secondary: #F97316;
+    }
     .hidden { display: none; }
   </style>
 </head>
+
 <body class="bg-gray-100 font-sans">
 
-  <!-- Menu / Navbar -->
-  <header class="fixed w-full bg-blue-600 text-white shadow-md z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-2xl font-bold">Alassane Sanogo</h1>
-      <nav>
-        <ul class="hidden md:flex space-x-6 font-semibold">
-          <li><a href="#about" class="hover:text-gray-200 transition">À propos</a></li>
-          <li><a href="#education" class="hover:text-gray-200 transition">Parcours</a></li>
-          <li><a href="#projects" class="hover:text-gray-200 transition">Projets</a></li>
-          <li><a href="#contact" class="hover:text-gray-200 transition">Contact</a></li>
-        </ul>
-        <!-- Mobile menu button -->
-        <div class="md:hidden">
-          <button id="mobile-menu-btn" class="focus:outline-none">
-            ☰
-          </button>
-        </div>
-      </nav>
+<!-- NAVBAR -->
+<header class="fixed w-full shadow-md z-50" style="background: var(--primary); color: white;">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+
+    <div class="flex items-center gap-3">
+      <img src="logo.png" class="h-10">
+      <h1 class="text-2xl font-bold">Math Prog</h1>
     </div>
-    <!-- Mobile menu -->
-    <ul id="mobile-menu" class="md:hidden hidden flex-col bg-blue-600 text-white space-y-2 px-6 pb-4">
-      <li><a href="#about" class="block py-2 hover:text-gray-200 transition">À propos</a></li>
-      <li><a href="#education" class="block py-2 hover:text-gray-200 transition">Parcours</a></li>
-      <li><a href="#projects" class="block py-2 hover:text-gray-200 transition">Projets</a></li>
+
+    <nav>
+      <ul class="hidden md:flex space-x-6 font-semibold">
+        <li><a href="#about" class="hover:text-orange-400">À propos</a></li>
+        <li><a href="#education" class="hover:text-orange-400">Parcours</a></li>
+        <li><a href="#projects" class="hover:text-orange-400">Projets</a></li>
+        <li><a href="#contact" class="hover:text-orange-400">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<div class="h-24"></div>
+
+<!-- HERO -->
+<section class="text-center py-16 text-white" style="background: var(--primary);">
+  <h2 class="text-4xl font-bold mb-4">Alassane Sanogo</h2>
+  <p class="text-xl">Ingénieur IA | Co-fondateur Sinitechs</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="p-10 max-w-5xl mx-auto text-center">
+  <h2 class="text-3xl font-bold mb-4">À propos de moi</h2>
+  <p class="text-gray-700">
+    Ingénieur en intelligence artificielle et co-fondateur de <strong>Sinitechs</strong>.
+    Je développe des solutions innovantes combinant IA et développement logiciel.
+  </p>
+
+  <!-- Social -->
+  <div class="flex justify-center gap-6 mt-6 text-2xl">
+    <a href="#" class="text-blue-600 hover:scale-110"><i class="fab fa-facebook"></i></a>
+    <a href="#" class="text-red-600 hover:scale-110"><i class="fab fa-youtube"></i></a>
+    <a href="#" class="text-blue-800 hover:scale-110"><i class="fab fa-linkedin"></i></a>
+    <a href="#" class="text-orange-500 hover:scale-110"><i class="fas fa-globe"></i></a>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="bg-white p-10 max-w-5xl mx-auto rounded-xl shadow-lg">
+  <h2 class="text-3xl font-bold mb-6">Parcours</h2>
+  <ul class="list-disc pl-5 text-gray-700 space-y-2">
+    <li>Master en Intelligence Artificielle</li>
+    <li>Licence en Informatique</li>
+    <li>Certifications ML & Deep Learning</li>
+  </ul>
+
+  <a href="cv.pdf" download class="mt-4 inline-block px-6 py-2 text-white rounded"
+     style="background: var(--secondary);">
+     Télécharger mon CV
+  </a>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="p-10 max-w-7xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6">Mes Projets</h2>
+
+  <!-- Search + Filter -->
+  <div class="flex flex-col md:flex-row gap-4 mb-6">
+    <input id="searchInput" placeholder="Rechercher..."
+      class="border p-2 rounded flex-1">
+    <select id="categoryFilter" class="border p-2 rounded">
+      <option value="all">Toutes</option>
+      <option value="web">Web</option>
+      <option value="ml">ML</option>
+      <option value="ai">IA</option>
+    </select>
+  </div>
+
+  <!-- Cards -->
+  <div id="projectsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="project-card bg-white p-6 rounded-xl shadow-lg" data-category="web">
+      <h3 class="text-xl font-bold mb-2">Portfolio</h3>
+      <p class="mb-4">Site professionnel personnel</p>
+      <div class="flex gap-2">
+        <a href="#" class="px-3 py-2 text-white rounded" style="background: var(--secondary);">Voir</a>
+        <a href="#" class="px-3 py-2 bg-gray-600 text-white rounded">Code</a>
+      </div>
+    </div>
+
+    <div class="project-card bg-white p-6 rounded-xl shadow-lg" data-category="ml">
+      <h3 class="text-xl font-bold mb-2">ML Project</h3>
+      <p class="mb-4">Machine Learning model</p>
+      <div class="flex gap-2">
+        <a href="#" class="px-3 py-2 text-white rounded" style="background: var(--secondary);">Voir</a>
+        <a href="#" class="px-3 py-2 bg-gray-600 text-white rounded">Code</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="text-center py-10 text-white" style="background:#0f172a;">
+  <h2 class="text-3xl font-bold mb-4">Contact</h2>
+  <p>Email : tonemail@gmail.com</p>
+  <p>GitHub : <a href="#" class="text-blue-400">tonprofil</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-4 bg-gray-800 text-gray-400">
+  © 2026 Alassane Sanogo
+</footer>
+
+<!-- SCRIPT -->
+<script>
+const searchInput = document.getElementById('searchInput');
+const categoryFilter = document.getElementById('categoryFilter');
+const cards = document.querySelectorAll('.project-card');
+
+function filter() {
+  let text = searchInput.value.toLowerCase();
+  let cat = categoryFilter.value;
+
+  cards.forEach(c => {
+    let t = c.innerText.toLowerCase();
+    let ccat = c.dataset.category;
+
+    if ((t.includes(text)) && (cat === 'all' || cat === ccat)) {
+      c.classList.remove('hidden');
+    } else {
+      c.classList.add('hidden');
+    }
+  });
+}
+
+searchInput.addEventListener('input', filter);
+categoryFilter.addEventListener('change', filter);
+</script>
+
+</body>
+  </html>      <li><a href="#projects" class="block py-2 hover:text-gray-200 transition">Projets</a></li>
       <li><a href="#contact" class="block py-2 hover:text-gray-200 transition">Contact</a></li>
     </ul>
   </header>
