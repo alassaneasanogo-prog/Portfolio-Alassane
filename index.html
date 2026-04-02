@@ -11,11 +11,36 @@
 </head>
 <body class="bg-gray-100 font-sans">
 
-  <!-- Header -->
-  <header class="bg-blue-600 text-white text-center py-10">
-    <h1 class="text-5xl font-bold">Alassane Sanogo</h1>
-    <p class="mt-2 text-xl">Ingénieur IA | Co-fondateur Sinitechs</p>
+  <!-- Menu / Navbar -->
+  <header class="fixed w-full bg-blue-600 text-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold">Alassane Sanogo</h1>
+      <nav>
+        <ul class="hidden md:flex space-x-6 font-semibold">
+          <li><a href="#about" class="hover:text-gray-200 transition">À propos</a></li>
+          <li><a href="#education" class="hover:text-gray-200 transition">Parcours</a></li>
+          <li><a href="#projects" class="hover:text-gray-200 transition">Projets</a></li>
+          <li><a href="#contact" class="hover:text-gray-200 transition">Contact</a></li>
+        </ul>
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="focus:outline-none">
+            ☰
+          </button>
+        </div>
+      </nav>
+    </div>
+    <!-- Mobile menu -->
+    <ul id="mobile-menu" class="md:hidden hidden flex-col bg-blue-600 text-white space-y-2 px-6 pb-4">
+      <li><a href="#about" class="block py-2 hover:text-gray-200 transition">À propos</a></li>
+      <li><a href="#education" class="block py-2 hover:text-gray-200 transition">Parcours</a></li>
+      <li><a href="#projects" class="block py-2 hover:text-gray-200 transition">Projets</a></li>
+      <li><a href="#contact" class="block py-2 hover:text-gray-200 transition">Contact</a></li>
+    </ul>
   </header>
+
+  <!-- Espace pour compenser menu fixe -->
+  <div class="h-24"></div>
 
   <!-- À propos -->
   <section id="about" class="p-10 max-w-5xl mx-auto">
@@ -71,32 +96,6 @@
         </div>
       </div>
 
-      <!-- Projet 2 -->
-      <div class="project-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition" data-category="ml">
-        <img src="https://via.placeholder.com/400x200" alt="Projet 2" class="rounded mb-4">
-        <div class="project-content">
-          <h3 class="text-2xl font-semibold mb-2">Prédictions ML</h3>
-          <p class="text-gray-700 mb-4">Modèle de Machine Learning pour prédire des tendances financières avec Python et scikit-learn.</p>
-          <div class="btn-group flex gap-2">
-            <a href="https://demo-projet2.com" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Voir le projet</a>
-            <a href="https://github.com/alassaneasanogo-prog/Projet-ML" target="_blank" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Code source</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projet 3 -->
-      <div class="project-card bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition" data-category="ai">
-        <img src="https://via.placeholder.com/400x200" alt="Projet 3" class="rounded mb-4">
-        <div class="project-content">
-          <h3 class="text-2xl font-semibold mb-2">Reconnaissance IA</h3>
-          <p class="text-gray-700 mb-4">Application IA pour la reconnaissance d’images et le traitement automatique avec TensorFlow.</p>
-          <div class="btn-group flex gap-2">
-            <a href="https://demo-projet3.com" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Voir le projet</a>
-            <a href="https://github.com/alassaneasanogo-prog/Projet-IA" target="_blank" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Code source</a>
-          </div>
-        </div>
-      </div>
-
       <!-- Ajoute ici tes autres projets en copiant un bloc ci-dessus -->
 
     </div>
@@ -115,7 +114,7 @@
     © 2026 Alassane Sanogo — Ingénieur de Recherche en IA
   </footer>
 
-  <!-- Script recherche et filtre -->
+  <!-- Script recherche + filtre projets -->
   <script>
     const searchInput = document.getElementById('searchInput');
     const categoryFilter = document.getElementById('categoryFilter');
@@ -142,6 +141,13 @@
 
     searchInput.addEventListener('input', filterProjects);
     categoryFilter.addEventListener('change', filterProjects);
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
   </script>
 
 </body>
