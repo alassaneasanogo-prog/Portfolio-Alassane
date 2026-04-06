@@ -163,45 +163,91 @@
   </section>
 
   <!-- PROJETS -->
-  <section id="projects" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-4">Projets Réalisés</h2>
-      <p class="text-center text-gray-600 mb-12">Quelques exemples de mes travaux en développement web et IA</p>
+  <!-- PROJETS -->
+<section id="projects" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-4">Projets Réalisés</h2>
+    <p class="text-center text-gray-600 mb-12">Quelques exemples de mes travaux en développement web et IA</p>
 
-      <div class="flex flex-col md:flex-row gap-4 mb-10 max-w-md mx-auto">
-        <input id="searchInput" placeholder="Rechercher un projet..." 
-               class="flex-1 border border-gray-300 focus:border-[#F97316] px-5 py-3 rounded-2xl outline-none">
-        <select id="categoryFilter" 
-                class="border border-gray-300 focus:border-[#F97316] px-5 py-3 rounded-2xl outline-none">
-          <option value="all">Toutes catégories</option>
-          <option value="web">Développement Web</option>
-          <option value="ia">Intelligence Artificielle</option>
-        </select>
-      </div>
-
-      <div id="projectsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="project-card bg-white border border-gray-100 rounded-3xl overflow-hidden shadow" data-category="web">
-          <div class="h-52 bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
-            <span class="text-white text-6xl">🌐</span>
-          </div>
-          <div class="p-7">
-            <h3 class="font-bold text-xl mb-3">Plateforme de Gestion d’Entreprise</h3>
-            <p class="text-gray-600 text-sm">Développement d’une application web complète pour la gestion des ressources et des processus internes.</p>
-          </div>
-        </div>
-
-        <div class="project-card bg-white border border-gray-100 rounded-3xl overflow-hidden shadow" data-category="ia">
-          <div class="h-52 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
-            <span class="text-white text-6xl">🧠</span>
-          </div>
-          <div class="p-7">
-            <h3 class="font-bold text-xl mb-3">Système de Vision Intelligente</h3>
-            <p class="text-gray-600 text-sm">Projet de Master : Détection et analyse d’objets en temps réel utilisant des techniques de vision par ordinateur.</p>
-          </div>
-        </div>
-      </div>
+    <div class="flex flex-col md:flex-row gap-4 mb-10 max-w-md mx-auto">
+      <input id="searchInput" placeholder="Rechercher un projet..." 
+             class="flex-1 border border-gray-300 focus:border-[#F97316] px-5 py-3 rounded-2xl outline-none">
+      <select id="categoryFilter" 
+              class="border border-gray-300 focus:border-[#F97316] px-5 py-3 rounded-2xl outline-none">
+        <option value="all">Toutes catégories</option>
+        <option value="web">Développement Web</option>
+        <option value="ia">Intelligence Artificielle</option>
+      </select>
     </div>
-  </section>
+
+    <div id="projectsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Projet 1 -->
+      <div class="project-card bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all duration-300" data-category="web">
+        <div class="h-52 bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
+          <span class="text-white text-6xl">🌐</span>
+        </div>
+        <div class="p-7">
+          <h3 class="font-bold text-xl mb-3">Plateforme de Gestion d’Entreprise</h3>
+          <p class="text-gray-600 text-sm mb-6">
+            Développement d’une application web complète pour la gestion des ressources humaines, stocks et processus internes.
+          </p>
+          
+          <!-- Technologies -->
+          <div class="mb-6">
+            <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Technologies utilisées</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">React.js</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Node.js</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">MongoDB</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <a href="https://github.com/votreusername/gestion-entreprise" 
+             target="_blank"
+             class="inline-flex items-center gap-2 bg-[#F97316] hover:bg-orange-600 text-white px-5 py-3 rounded-2xl text-sm font-medium transition-colors">
+            <i class="fab fa-github"></i>
+            Voir le code source
+          </a>
+        </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="project-card bg-white border border-gray-100 rounded-3xl overflow-hidden shadow hover:shadow-xl transition-all duration-300" data-category="ia">
+        <div class="h-52 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+          <span class="text-white text-6xl">🧠</span>
+        </div>
+        <div class="p-7">
+          <h3 class="font-bold text-xl mb-3">Système de Vision Intelligente</h3>
+          <p class="text-gray-600 text-sm mb-6">
+            Projet de Master : Détection et analyse d’objets en temps réel utilisant des modèles de deep learning (YOLO, OpenCV).
+          </p>
+          
+          <!-- Technologies -->
+          <div class="mb-6">
+            <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Technologies utilisées</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Python</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">PyTorch</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">OpenCV</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">YOLOv8</span>
+              <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Streamlit</span>
+            </div>
+          </div>
+
+          <a href="https://github.com/votreusername/vision-intelligente" 
+             target="_blank"
+             class="inline-flex items-center gap-2 bg-[#F97316] hover:bg-orange-600 text-white px-5 py-3 rounded-2xl text-sm font-medium transition-colors">
+            <i class="fab fa-github"></i>
+            Voir le code source
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- CONTACT -->
   <section id="contact" class="py-20 bg-[#0B3C5D] text-white">
